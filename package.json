@@ -6,6 +6,9 @@
   "bin": {
     "gitzip": "bin/cli.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "conventional-changelog": "conventional-changelog",
     "lint": "eslint .",
