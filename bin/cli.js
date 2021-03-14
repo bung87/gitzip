@@ -69,7 +69,6 @@ const data = {
   date: date,
   time: time
 }
-console.log(date,data)
 const filename = TemplateEngine(argv.name, data)
 const outputPath = path.resolve(cwd, argv.destination,filename);
 

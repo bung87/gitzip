@@ -1,6 +1,6 @@
 {
   "name": "@bung87/gitzip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Archives ignoring files from gitignore",
   "main": "lib/gitzip.js",
   "bin": {
