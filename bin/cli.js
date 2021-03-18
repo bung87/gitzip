@@ -63,8 +63,10 @@ const dt = now.toISOString().split('T')
 
 const date = dt[0]
 const time = dt[1].substring(0,8).split(':').join("\ua789")
+const idx = packageJson.name.indexOf('/')
+const packageName = packageJson.name.indexOf('@')!== -1 && idx !== -1 ? packageJson.name.substring(idx+1) : packageJson.name
 const data = {
-  name: packageJson.productName || packageJson.name,
+  name: packageJson.productName || packageName,
   productName: packageJson.productName,
   version: packageJson.version,
   date: date,
