@@ -4,7 +4,8 @@
 
 const path = require("path");
 const fs = require('fs');
-var zip = require("../lib/gitzip.js");
+const zip = require("../lib/gitzip.js");
+const {execSync} = require('child_process');
 
 function TemplateEngine(tpl, data) {
   var re = /\[([^\]]+)?\]/, match;
@@ -67,7 +68,8 @@ const data = {
   productName: packageJson.productName,
   version: packageJson.version,
   date: date,
-  time: time
+  time: time,
+  hash:  execSync('git rev-parse --short HEAD', {encoding: 'utf8'})
 }
 const filename = TemplateEngine(argv.name, data)
 const outputPath = path.resolve(cwd, argv.destination,filename);
